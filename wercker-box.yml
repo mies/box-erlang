@@ -1,11 +1,12 @@
 name: erlang
-version: 0.0.4
+version: 0.0.5
 inherits: wercker/ubuntu12.04-chef10.18.2@0.0.8
 type: main
 platform: ubuntu@12.04
 description: box with erlang and rebar
 keywords:
   - erlang
+  - rebar
 packages:
   - erlang@R16B01
 script: |
@@ -15,12 +16,12 @@ script: |
   tar -xzvf otp_src_R16B01.tar.gz
   cd otp_src_R16B01
   ./configure && sudo make install
-  cd ..
+  cd -
   wget https://github.com/basho/rebar/archive/master.zip -O rebar.zip
   unzip rebar.zip
   cd rebar-master
   make
   sudo mv rebar /bin/
-  cd ..
+  cd -
 env:
   ERLANG_VERSION: "R16B01"
