@@ -1,7 +1,7 @@
 box-erlang
 ==========
 
-wercker box for erlang
+wercker box for erlang, now with rebar thanks to @rpanachi
 
 
 Status on wercker:
