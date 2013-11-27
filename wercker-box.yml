@@ -1,5 +1,5 @@
 name: erlang
-version: 0.0.5
+version: 0.0.6
 inherits: wercker/ubuntu12.04-chef10.18.2@0.0.8
 type: main
 platform: ubuntu@12.04
@@ -8,13 +8,13 @@ keywords:
   - erlang
   - rebar
 packages:
-  - erlang@R16B01
+  - erlang@R16B02
 script: |
   sudo apt-get update
   sudo apt-get install build-essential wget libncurses5-dev openssl libssl-dev fop xsltproc unixodbc-dev git-core
-  wget http://www.erlang.org/download/otp_src_R16B01.tar.gz
-  tar -xzvf otp_src_R16B01.tar.gz
-  cd otp_src_R16B01
+  wget http://www.erlang.org/download/otp_src_R16B02.tar.gz
+  tar -xzvf otp_src_R16B02.tar.gz
+  cd otp_src_R16B02
   ./configure && sudo make install
   cd -
   wget https://github.com/basho/rebar/archive/master.zip -O rebar.zip
@@ -24,4 +24,4 @@ script: |
   sudo mv rebar /bin/
   cd -
 env:
-  ERLANG_VERSION: "R16B01"
+  ERLANG_VERSION: "R16B02"
